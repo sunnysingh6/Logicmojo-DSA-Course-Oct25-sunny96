@@ -1,0 +1,16 @@
+    public static int remove_dupli(List<Integer> arr) {
+    // Write your code here
+        int i=0,j=1;
+        while(j<arr.size()){
+            if(arr.get(i)!=arr.get(j)){
+                i++;
+                if(i!=j){
+                int temp=arr.get(i);
+                arr.set(i,arr.get(j));
+                arr.set(j,temp);
+                }
+            }
+            j++;
+        }
+           return i+1;
+    }
