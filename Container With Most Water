@@ -1,0 +1,19 @@
+    public static int maxArea(int n, List<Integer> height) {
+    // Write your code here
+        int i=0,j=height.size()-1;
+        int maxArea=0;
+        while(i<=j){
+            maxArea=Math.max(maxArea,Math.min(height.get(j),height.get(i))*(j-i));
+            if(height.get(i)<height.get(j)){
+                i++;
+            }else if(height.get(i)<height.get(j)){
+            j--;
+            }else{
+                i++;
+                j--;
+            }
+        }
+        
+        return maxArea;
+
+    }
