@@ -1,0 +1,22 @@
+function insertNodeAtPosition(llist, data, position) {
+    // Write your code here
+        // Write your code here
+        const newNode = new SinglyLinkedListNode(data);
+        let index=0;
+        const headNode=llist;
+        
+        if(position==0 && llist==null){
+            return newNode;
+        }
+        
+        while(index<position-1){
+            llist=llist.next;
+            index++;
+        }
+        
+        newNode.next=llist.next;
+        llist.next=newNode; 
+        
+        return headNode;
+
+}
