@@ -1,0 +1,25 @@
+public static SinglyLinkedListNode findLinkedList(SinglyLinkedListNode head, int k) {
+    // Write your code here
+        SinglyLinkedListNode prev=null;
+        SinglyLinkedListNode curr=head,temp=head;
+        int size=0;
+        int index=0;
+        SinglyLinkedListNode backup=null;
+        while(temp!=null){
+            temp=temp.next;
+            size++;
+        }
+        while(curr!=null && index<k){
+           backup=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=backup;
+            index++;
+        }
+        if (backup != null) {
+            head.next = findLinkedList(backup, k);
+        }
+        
+        return prev;
+
+    }
