@@ -1,0 +1,13 @@
+public static int minPairSum(int n, List<Integer> arr) {
+    // Write your code here
+        Collections.sort(arr);
+        int i=0,j=arr.size()-1;
+        int maxSum=0;
+        while(i<j){
+            maxSum=Math.max(maxSum,arr.get(i)+arr.get(j));
+            i++;j--;
+        }
+        
+        return maxSum;
+
+    }
