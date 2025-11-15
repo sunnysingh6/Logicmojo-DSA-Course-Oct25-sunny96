@@ -1,0 +1,31 @@
+public static int nge_func(int n) {
+    // Write your code here
+        char[] num=Integer.toString(n).toCharArray();
+        int i,j;
+        for(i=num.length-1;i>0;i--){
+            if(Character.getNumericValue(num[i])>Character.getNumericValue(num[i-1])){
+                break;
+            }
+        }
+        if(i==0)
+            return -1;
+        
+        int x=Character.getNumericValue(num[i-1]),smallest=i;
+        for(j=i;j<num.length;j++){
+            if(Character.getNumericValue(num[j])>x && Character.getNumericValue(num[j])<Character.getNumericValue(num[smallest])){
+                smallest=j;
+            }
+        }
+        
+            char temp=num[i-1];
+            num[i-1]=num[smallest];
+            num[smallest]=temp;
+        Arrays.sort(num, i, num.length);
+               
+               
+               return Integer.parseInt(String.valueOf(num));
+               
+            
+        
+
+    }
